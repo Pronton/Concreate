@@ -2,7 +2,11 @@ package application;
 	
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -25,18 +29,14 @@ public class Main extends Application {
 		try {
 			pane = (AnchorPane)FXMLLoader.load(Main.class.getResource("Doctrine.fxml"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		scene = new Scene(pane, 640, 480);
 		stage.setScene(scene);
-		stage.setTitle("Cool things");
-		
-		
 		stage.show();
  
 //		try 
-//			BorderPane root = new BorderPane(); 
+//			BorderPane root = new BorderPane();
 //			Scene scene = new Scene(root,400,400);
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 //			primaryStage.setScene(scene);
@@ -44,6 +44,12 @@ public class Main extends Application {
 //		} catch(Exception e) {
 //			e.printStackTrace();
 //		}
+	}
+	
+	@FXML
+	public void initialize()
+	{
+		JOptionPane.showMessageDialog(null,"Get it Done.");
 	}
 	
 	public static void main(String[] args) {
